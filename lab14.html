@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="name">My Melody's Phone Book</h1>
+        <div class="img">
+            <div class="imgs" id="profile"></div>
+            <div class="box">
+                <p>1</p>
+            </div>
+        </div>
+        <div class="input">
+            <p>Set the Username</p>
+            <input type="text" placeholder="Enter Username" id="user">
+            <button onclick="setName()">SET</button>
+        </div>
+        <div class="input">
+            <p>Set the profile image URL</p>
+            <input type="text" placeholder="Enter image URL" id="img">
+            <button onclick="setImg()">SET</button>
+        </div>
+        <div class="phone">
+            <h2>Phone Number List</h2>
+            <div class="input">
+                <input type="text" placeholder="Name" id="phonename">
+                <input type="text" placeholder="tel" id="tel">
+                <button onclick="addContact()">Add</button>
+                <button onclick="saveCSV()">Export</button>
+            </div>
+            <table class="st">
+                <th>
+                        <td>No.</td>
+                        <td>Name</td>
+                        <td>Phone Number</td>
+                </th>
+                <tbody id="contactList">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        let mydata = []
+        const username = document.getElementById("name");
+        const profile = document.getElementById("profile");
+        const newdiv = document.getElementsByClassName("st")[0];
+        let contactCount = 0;
+
+
+        function setName() {
+            username.textContent = document.getElementById("user").value + " Phone Book";
+        }
+        function setImg() {
+            profile.style.backgroundImage = "url(" + document.getElementById("img").value + ")";
+        }
+        function addContact() {
+            const name = document.getElementById("phonename");
+            const phone = document.getElementById("tel");
+            mydata.push({ "number": mydata.length + 1, "Name": name.value, "Tel": phone.value })
+            console.log(mydata)
+            if (name && phone) {
+                contactCount++;
+                // const newRow = document.createElement("td");
+                const table =  document.getElementById("contactList");
+                mydata.forEach(element => {
+                    table.innerHTML += `<tr><td>${element.number}</td><td>${element.Name}</td><td>${element.Tel}</td></tr>`;
+
+                });
+                document.getElementById("phobename").value = '';
+                document.getElementById("phoneNumber").value = '';
+            } else {
+                alert("Please enter both name and phone number.");
+            }
+        }
+        function saveCSV() {
+            const csvContent = phonenumber.map(row => row.join(",")).join("\n"); // Convert array to CSV string
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const link = document.createElement("a");
+            const url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", "data.csv");
+            link.style.visibility = "hidden";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        };
+    </script>
+</body>
+
+</html>

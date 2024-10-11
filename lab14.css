@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+h1 {
+    font-size: 36px;
+    font-weight: 900;
+}
+.img {
+    position: relative;
+}
+.img .imgs{
+    width: 183px;
+    height: 183px;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/607f89e638219e13eee71b1e/1684821560422-SD5V37BAG28BURTLIXUQ/michael-sum-LEpfefQf4rU-unsplash.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+.img .box {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+.img .box {
+    color: white;
+    background-color: red;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.input{
+    display: flex;
+    gap: 20px;
+    margin-top: 24px;
+    align-items: center;
+}
+.input input {
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 0;
+    background-color: #dcdcdc;
+}
+.input button {
+    padding: 8px;
+    border-radius: 8px;
+    border: 0;
+    background-color: rgb(16, 126, 252);
+    color: #fff;
+    transition: .2s;
+}
+.input button:hover {
+    background-color: rgb(15, 113, 224);
+    cursor: pointer;
+}
+.phone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+}
+.phone h2 {
+    font-size: 24px;
+}
+table, tr, td{
+    border: 0;
+}
+table {
+    width: 100%;
+}
+tr{
+    background-color: #cccccc40;
+}
