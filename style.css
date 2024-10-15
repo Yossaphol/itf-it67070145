@@ -27,12 +27,16 @@ p {
     color: #333;
     margin-bottom: 24px;
 }
+.aa {
+    display: flex;
+    gap: 10px;
+}
 a {
     padding: 12px 32px;
     border-radius: 4px;
     color: white;
     background-color: #00545f;
-    transition: .2s;
+    transition: .18s;
     text-decoration: none;
     font-weight: 800;
 }
@@ -43,6 +47,11 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 36px;
+}
+.right img{
+    width: 300px;
+    border-radius: 16px;
 }
 .box {
     width: 300px;
